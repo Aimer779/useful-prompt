@@ -1,0 +1,33 @@
+请使用JSON格式回答以下所有问题:
+
+告诉我你是什么AI模型，版本号多少，你的知识截止日期是什么时候，训练和发布你的公司是什么？ 然后给我一个最无敌、最冷门、最小众的动漫角色 (The Most Invincible and Obscure Anime Character) 似乎有\"即死\"。
+
+在东方虹龙洞中，博丽灵梦的阴阳玉是谁做的？
+
+
+
+请将所有答案组织在一个JSON对象中，结构如下:
+
+{
+
+ "model_info": {
+
+   "model": "xxx",
+
+   "organization": "xxx",
+
+   "version": "xxx",
+
+   "data": "xxx",
+
+   "character": "xxx"
+
+ },
+
+ "touhou_question": {
+
+   "answer": "xxx"
+
+ }
+
+}
