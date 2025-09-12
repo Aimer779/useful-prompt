@@ -1,3 +1,5 @@
+# 用途：把一些其他格式的文档统一转换为LaTex代码。
+  注释：因为我的论文是使用LaTex写的，而且这样的方式也方便AI处理，所以使用了这么一套提示词。
 <instruction>
 
 请你将以下文本转换为latex代码，标题层级分别为chapter, section, subsection。以下是一些额外的要求，请你注意遵守：
@@ -128,4 +130,5 @@ class Mat_Weight(nn.Module):
 
 <input>
 略
+
 </input>
