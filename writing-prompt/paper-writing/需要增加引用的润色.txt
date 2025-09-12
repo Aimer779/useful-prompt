@@ -1,0 +1,99 @@
+<instruction>
+
+1. 请你扩写和润色以下文本内容。它需要更流畅、自然，并且保持原意，并且使它的信息量更丰富，所以请你在必要的地方添加更多的细节和解释。
+
+2. 请注意不要改变文本的核心信息。请确保润色后的文本符合中文的语言习惯和学术化的风格。
+
+3. 如果你需要新增引用，请你在bib.tex中添加相应的引用条目，并在文本中使用\cite{引用标识}来引用。
+
+4. 目前这段文本的引用文献太少，我希望你可以增加一些相关的引用文献，以增强文本的学术性和权威性。中文与英文的文献都要有。为了增加文献引用，你可以在适当的地方添加相关的文本内容，只要不偏离原意即可。
+
+5. 请保持使用Latex代码输出，避免md语法在其中。特别是`code`，请使用\texttt{code}来代替。
+
+6. 请你把完整处理后的文本输出到代码块之中。Latex代码的输出应直接从\chapter开始，无需再声明包与文档类型，也无需\begin{document}等命令。对于新增的bib条目，请你输出在另一个代码块中，并且使用bibtex格式。
+
+</instruction>
+
+
+
+<bibtex>
+
+% [1]
+
+@article{Dhariwal2020Jukebox,
+
+  author    = {Dhariwal, P. and Jun, H. and Payne, C. and Kim, J. W. and Radford, A. and Sutskever, I.},
+
+  title     = {Jukebox: A Generative Model for Music},
+
+  journal   = {arXiv:2005.00341},
+
+  year      = {2020}
+
+}
+
+
+
+% [2]
+
+@article{Engel2017Neural,
+
+  author    = {Engel, J. and Resnick, C. and Roberts, A. and Dieleman, S. and Eck, D. and Simonyan, K. and Norouzi, M.},
+
+  title     = {Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders},
+
+  journal   = {arXiv:1704.01279},
+
+  year      = {2017}
+
+}
+
+
+
+% [3]
+
+@article{Hennequin2020Spleeter,
+
+  author    = {Hennequin, Romain and Khlif, Anis and Voituret, Felix and Moussallam, Manuel},
+
+  title     = {Spleeter: a fast and efficient music source separation tool with pre-trained models},
+
+  journal   = {Journal of Open Source Software},
+
+  volume    = {5},
+
+  number    = {50},
+
+  pages     = {2154},
+
+  year      = {2020},
+
+  doi       = {10.21105/joss.02154},
+
+  url       = {https://doi.org/10.21105/joss.02154}
+
+}
+
+
+
+% [4]
+
+@article{Chen2020WaveGrad,
+
+  author    = {Chen, X. and Zhang, H. and Arik, S. O. and Fong, J. and Tarjan, D. and Piech, C. and Li, M.},
+
+  title     = {WaveGrad: Estimating Gradients for Waveform Generation},
+
+  journal   = {arXiv:2009.00713},
+
+  year      = {2020}
+
+}
+
+</bibtex>
+
+
+
+<input>
+略
+</input>

@@ -1,0 +1,131 @@
+<instruction>
+
+请你将以下文本转换为latex代码，标题层级分别为chapter, section, subsection。以下是一些额外的要求，请你注意遵守：
+
+1. 当需要有序列表时，请你注意使用enumrate环境。将转换后的代码输出在代码块之中。
+
+2. 当你需要引用时，请参考ref.bib中的参考文献索引。
+
+3. 对于图片，请你预留一个figure的位置，并且填充好对应的label和caption，并预设其名为对应序号。比如若你可以从caption中知道该图序号为“2-1”，那么文件名就是"2-1.png"。我会在你填写的对应位置放置对应图片的（假设图片都放在figs文件夹内）
+
+4. 对于行间公式，请你预留一个equation环境，并且填充好对应的label，并预设其名为对应序号。比如若你可以从文本中知道该公式序号为“2-1”，那么该公式名就是"eq:2-1"。我会在你填写的对应位置放置对应公式的，你可以使用注释%Todo来提醒我。
+
+5. 当你需要建立表格时，请使用sometable环境。
+
+6. 当你需要编写代码时，请使用lstlisting环境。若代码语言未知，请统一设置为language=Python或language=C。代码缩进以4个空格为1单位。
+
+7. latex中要显示换行是需要空一行的，请你在输出的代码中注意这一点。
+
+8. 注意使用数学环境和转义字符来处理公式和特殊字符。
+
+9. 当你插入代码或图片时，请使用\label命令来标记它们，以便在文中使用\ref引用。
+
+</instruction>
+
+
+
+
+
+<templete>
+
+figure环境模板：
+
+\begin{figure}[h]
+
+    \centering
+
+    \includegraphics[width=0.5\textwidth]{figs/2-1.png}
+
+    \caption{Alpha-Muse系统用例图}
+
+    \label{fig:2-1}
+
+\end{figure}
+
+
+
+sometable环境模板：
+
+\begin{sometable}{红警2名词解释}{tab:abbr_table}
+
+    \begin{tabularx}{\textwidth}{llX}
+
+        \toprule
+
+        \textbf{术语类别} & \textbf{缩略语} & \textbf{解释} \\ \midrule
+
+        & 兵营 & 兵营（Barracks），《命令与征服\ 红色警戒2：尤里的复仇》游戏中的一种生产建筑，用以生产步兵单位 \\ \cmidrule(l){2-3}
+
+        & 建造场 & 建造场（Construction Yard），《命令与征服\ 红色警戒2：尤里的复仇》游戏中的一种基础建筑，用以支持其他建筑的建造 \\ \cmidrule(l){2-3}
+
+        & 矿厂 & 矿石精炼厂（Ore Refinery），《命令与征服\ 红色警戒2：尤里的复仇》游戏中的一种资源建筑，用以将矿车采集的矿石转化为游戏资金 \\ \cmidrule(l){2-3}
+
+        游戏 & 空指 & 空指部（Airforce Command Headquarters），《命令与征服\ 红色警戒2：尤里的复仇》游戏中的一种资源建筑，用以提供雷达功能和T2科技及生产部分空军单位 \\ \cmidrule(l){2-3}
+
+        & 相机 & 游戏术语，特指游戏内的观察区域和视角 \\ \cmidrule(l){2-3}
+
+        & 重工 & 战车工厂（War Factory），《命令与征服\ 红色警戒2：尤里的复仇》游戏中的一种生产建筑，用以生产载具单位 \\ \cmidrule(l){2-3}
+
+        & 战争迷雾 & 游戏术语，《命令与征服\ 红色警戒2：尤里的复仇》中指黑色的未探索区域 \\ \bottomrule
+
+    \end{tabularx}
+
+\end{sometable}
+
+
+
+lstlisting环境模板：
+
+\begin{lstlisting}[language=Python, caption=低秩矩阵权重表示（Mat\_Weight 简化实现）, label=lst:mat_weight_detail, tabsize=4]
+
+class Mat_Weight(nn.Module):
+
+    def __init__(self, in_features, out_features, rank, init_type_mag, requires_grad="left-right"):
+
+        super().__init__()
+
+        self.rank = rank
+
+        self.init_type_mag = init_type_mag # 初始化幅度相关参数
+
+        self.requires_grad_flags = requires_grad # 控制哪个因子可训练
+
+        # 左因子矩阵 L (out_features x rank)
+
+        self.left = nn.Parameter(torch.zeros(size=(out_features, self.rank)),
+
+                               requires_grad=bool("left" in self.requires_grad_flags))
+
+        # 右因子矩阵 R (rank x in_features)
+
+        self.right = nn.Parameter(torch.zeros(size=(self.rank, in_features)),
+
+                                requires_grad=bool("right" in self.requires_grad_flags))
+
+        self.init_parameters() # 调用初始化方法
+
+    def init_parameters(self, seed=1234):
+
+        # 此处实现具体的初始化逻辑，例如根据 init_type_mag 进行正态或均匀初始化
+
+        # 通常将其中一个因子初始化为零，另一个因子进行非零初始化
+
+        # ... (初始化代码) ...
+
+        pass # Placeholder for actual initialization code
+
+    def forward(self):
+
+        # 通过矩阵乘法重构完整 (或更新) 权重 W = L * R
+
+        return torch.mm(self.left, self.right)
+
+\end{lstlisting}
+
+</templete>
+
+
+
+<input>
+略
+</input>
